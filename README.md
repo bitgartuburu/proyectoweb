@@ -1,2 +1,2 @@
-# proyectoweb
-Recopilación de proyectos desarrollados durante el aprendizaje de desarrollo web
+# Proyecto WEB
+Recopilación de proyectos realizados durante el aprendizaje de desarrollo web

@@ -1,0 +1,61 @@
+body {
+    background-color: rgb(183, 196, 207);
+}
+.cabecera {
+    width: 100%; /* Ancho de la barra */
+    margin: 20px auto; /* Centra la barra */
+    padding: 10px auto; /* Relleno superior/inferior para dar altura */
+    background-color: #fdfdfd; 
+    border: 3px solid #0f47f1; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); /* Sombra oscura */
+    color: #0f47f1;
+    border-left: none; /* Elimina el borde izquierdo */
+    border-right: none; /* Elimina el borde derecho */
+    text-align: center;
+}
+nav {
+    overflow: hidden; 
+    
+    /* Características de Recuadro/Caja */
+    width: 20%; 
+    margin: 20px; /* Centra la barra */
+    padding: 10px 0; /* Relleno superior/inferior para dar altura */
+    
+    /* Colores y Borde de Contraste */
+    background-color: #2c3e50; 
+    border: 3px solid #f1c40f; 
+    border-radius: 8px; /* Esquinas redondeadas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); /* Sombra oscura */
+}
+nav ul {
+    padding: 20px;
+    /* Margen a los lados para separar del borde del NAV */
+    margin: 0 10px 0 10px; 
+    list-style-image: url("../imagenes/carpeta.gif");
+}
+nav ul li {
+    margin-right: 15px; /* Separación horizontal entre botones */
+}
+nav ul li a:link, 
+nav ul li a:visited {
+    /* Estilo del texto */
+    color: #ffffff; 
+    text-decoration: none; /* Elimina el subrayado */
+    font-size: 1.1em;
+    font-weight: bold;
+
+    /* Estilo de la caja (botón) */
+    padding: 6px 10px;
+    border-radius: 5px;
+    display: inline-block; /* NECESARIO para que el padding funcione */
+    transition: background-color 0.3s, color 0.3s; /* Transición suave para el hover */
+}
+
+/* Estilo al pasar el ratón (HOVER) */
+nav ul li a:hover {
+    background-color: #f1c40f; /* Amarillo fuerte (contraste) */
+    color: #2c3e50; /* Texto azul marino oscuro (contraste) */
+    
+    /* También puedes añadir un efecto visual */
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); 
+}

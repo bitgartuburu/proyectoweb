@@ -1,0 +1,35 @@
+body {
+    background-color: #f0f0f0; /* Color muy claro para el fondo */
+}
+
+.cajacabecera {
+    padding: 15px;
+    background-color: #2a3ab4;
+    margin: 20px auto;
+    color: rgb(254, 254, 254);
+    text-align: center;
+    border-top: 3px solid #000;      /* Borde oscuro y fino arriba */
+    border-bottom: 3px solid #000;   /* Borde oscuro y fino abajo */
+}
+
+.cajafpersonal{
+    border: 6px solid #0600008c;
+    border-radius: 10px; /* Redondea las esquinas */
+    padding: 15px;
+    background-color: #e38aa3;
+    width: 40%;
+    margin: 20px auto;
+    color:#d90a0a;
+}
+
+.cajaformacion{
+    border-style: double;
+    border-width: 6px; /* Ajusta el grosor de las líneas dobles */
+    border-color: #000000; /* Un azul oscuro para las líneas */
+    border-radius: 10px; /* Redondea las esquinas */
+    padding: 15px;
+    background-color: #6ed4f6;
+    width: 40%;
+    margin: 20px auto;
+    color:#011341d2;
+}

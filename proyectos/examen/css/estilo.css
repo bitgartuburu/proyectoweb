@@ -1,0 +1,140 @@
+
+/* Necesario para que el grid ocupe toda la altura de la página y el footer quede "pegado" */
+body {
+    margin: 0px;
+    background-color: black;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+     flex-wrap: wrap; 
+}
+
+.grid-container {
+    display: grid; /* Marca el inicio del grid, sin esta etiqueta no podemos crear las columnas ni las filas */
+    
+    /* Definición de Columnas (3 Columnas) */
+    /*  C1: Estrecha para el menú (e.g., 200px) */
+    /*  C2, C3 y C4: Flexibles e iguales (1fr cada una) para el contenido principal */
+    grid-template-columns: 200px 1fr 1fr 1fr;
+    
+    /* Definición de Filas (5 Filas) */
+    /* - R1, R2, R3, R5: Ajuste automático (auto) */
+    /* - R4: Espacio flexible (1fr) para empujar el footer hacia abajo */
+    grid-template-rows: auto auto auto 1fr auto; 
+    
+    /* La estructura visual del diseño, fila por fila */
+    grid-template-areas:
+        "header       header          header       header"
+        "menu         text-capa       image-area   table-area"
+        "menu         text-capa       image-area   table-area"
+        "menu         text-capa       image-area   table-area"
+        "footer       footer          footer       footer";
+
+    /* Espacio entre las celdas */
+    gap: 15px; 
+
+    /* Asegura que el contenedor ocupe al menos toda la altura de la vista */
+    min-height: 100vh;
+    padding: 15px; /* Pequeño margen para que el contenido no toque los bordes */
+    box-sizing: border-box;
+}
+
+/* Cada elemento HTML asignado al nombre de área definido arriba */
+.header        { grid-area: header; text-align: center; color:white;} /* RECUERDA: Aquí puedes añadir el text-align */
+.text-capa     { grid-area: text-capa; color:#e0b0e0; text-align: center;}
+.image-area    { grid-area: image-area; }
+.menu          { grid-area: menu; }
+.table-area    { grid-area: table-area; }
+.footer        { grid-area: footer; text-align: center; }
+
+
+/* Estilos Visuales - Los marcos, para diferenciar bien las areas */
+.header {
+    background-color: #36162f;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+}
+.area-estilo {
+    padding: 10px;
+
+}
+
+.menu {
+    text-align: center;
+    color: red;
+    font-weight: bold;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.text-capa {
+    border: 1px solid; 
+    border-color: #e0b0e0;
+    min-height: 150px;
+    grid-area: text-capa; 
+    display: flex;
+    flex-direction: column;
+}
+
+.piecapa {
+    /* Pegado automáticamente al final por el flex-grow del párrafo */
+    
+    /* Estilos visuales según tu imagen */
+    background-color: #777; /* Un gris similar al de tu imagen */
+    color: white;
+    text-align: center;
+    padding: 10px; /* Ajusta el padding según necesites */
+    border-top: 1px solid #aaa; /* Borde superior sutil */
+    
+    /* Si también quieres que el pie tenga el mismo borde exterior de .area-estilo,
+       puedes quitar el padding de .text-capa y dárselo a sus elementos hijos,
+       o gestionar los bordes de .area-estilo de otra forma.
+       Por simplicidad, asumimos que .pie-de-capa ya no tendrá bordes laterales
+       de .area-estilo.
+    */
+    /* Para que el "pie" no tenga los bordes laterales del .area-estilo del padre,
+       tendríamos que ajustar el padding del padre y el margen del hijo. */
+}
+
+.image-area {
+    color:white;
+    text-align: center;
+    border: 1px solid; 
+    border-color: #e0b0e0;
+    min-height: 150px;
+    position:relative;
+}
+.table-area {
+    text-align: center;
+    color: white;
+    border: 1px solid; 
+    border-color: #e0b0e0;
+    min-height: 150px;
+}
+
+.footer {
+    color: white;
+    background: linear-gradient(to right, rgb(30, 16, 42), rgb(214, 10, 10))
+}
+table {
+    margin: auto;
+    border-collapse: collapse;
+    text-align: center;
+    border: 1px solid;
+    border-color: yellow;
+}
+th, td {
+    border: 1px solid;
+    border-color: yellow;
+    padding: 20px;
+}
+th {
+    background-color: mediumvioletred;
+}
+.coloreado {
+    background-color: antiquewhite;
+    color:black;
+    border-color: rgb(23, 27, 30);
+}
+a:hover{
+    color:orange
+}
+a {
+    text-decoration: none;
+}

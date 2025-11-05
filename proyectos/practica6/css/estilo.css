@@ -1,0 +1,153 @@
+/* --- Reset Básico y Variables --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    padding: 10px;
+}
+
+/* Header */
+.cabecera-principal {
+    background-color: #f0fff0; 
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.cabecera-principal h1 {
+    color: #38761d; 
+}
+
+/* Estilos de la Navegación */
+.navegacion-principal {
+    background-color: #38761d;
+    padding: 10px 0;
+}
+
+.navegacion-principal ul {
+    list-style: none;
+    display: flex; /* Para poner los ítems en línea */
+    justify-content: flex-start;
+    padding-left: 10px;
+}
+
+.navegacion-principal li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+}
+
+.navegacion-principal li a:hover {
+    background-color: #6aa84f; 
+}
+
+/* --- GRID --- */
+
+/* #contenedor-grid para SECTION y ASIDE */
+/* Estructura principal con dos columnas */
+#contenedor-grid {
+    display: grid;
+    /* Define 2 columnas: 75% para el contenido, 25% para el aside */
+    grid-template-columns: 3fr 1fr; /* Una relación de 3 a 1 (ej: 75% y 25%) */
+    gap: 10px;
+    background-color: #d9ead3; 
+    padding: 20px 10px 10px 10px; /* Espacio interior */
+}
+
+/* --- SECTION --- */
+
+.seccion-articulos {
+    /* Ocupa la primera columna de la grid */
+    grid-column: 1 / 2;
+}
+
+.seccion-articulos h2 {
+    text-align: center;
+    padding: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    border: 1px solid #6aa84f;
+    background-color: #eaf1e7;
+}
+
+/* Aplicando la regla: si quiero dar un estilo a un H1 dentro de Section 
+   en el fichero CSS ( section h1{......}) */
+/* En este caso no usamos H1, sino H3 para los artículos */
+.seccion-articulos h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #38761d;
+}
+
+/* Article */
+.articulo-destacado, .articulo-secundario {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #a6a6a6;
+    background-color: white; 
+}
+
+/* Aplicando la regla: Si voy a declarar una clase dentro de un parrafo 
+   HTML (<p class="nombre">) en el CSS (p.nombre{......}) */
+p.parrafo-resumen {
+    line-height: 1.6;
+    text-align: justify;
+}
+pre.parrafo-resumen {
+    line-height: 1.6;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* --- ASIDE --- */
+
+#espacio-publicidad {
+    /* Ocupa la segunda columna de la grid */
+    grid-column: 2 / 3;
+    padding: 15px;
+    border: 1px solid #4a86e8; 
+    background-color: #cfe2f3; 
+    height: fit-content; /* Ajusta la altura al contenido */
+}
+
+/* Aplicando la regla: Utiliza identificador en el div que utilices 
+   HTML(<div id="nombre">) y en CSS (div#nombre{...}) */
+/* En este caso usamos un ASIDE con ID */
+aside#espacio-publicidad h3 {
+    text-align: center;
+    color: #0b5394; 
+    margin-bottom: 10px;
+}
+
+#anuncio-principal {
+    background-color: white;
+    padding: 15px;
+    border: 1px dashed #0b5394;
+    text-align: center;
+}
+
+#anuncio-principal h4 {
+    color: #cc0000; 
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+/* --- FOOTER --- */
+
+.pie-pagina {
+    background-color: #333;
+    color: #f7f7f7;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.8em;
+    clear: both; /* Asegura que se coloque debajo de los flotantes si no usáramos grid */
+    margin-top: 10px;
+}

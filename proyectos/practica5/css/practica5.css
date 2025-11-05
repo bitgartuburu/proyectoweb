@@ -1,0 +1,76 @@
+body {
+    margin: auto;
+    font-family: sans-serif;
+}
+table {
+    margin: auto;
+    border-collapse: collapse; /* Quita los bordes dobles */
+    border: 5px solid;  /* Gestiona los bordes externos */
+}
+    th, td { /* Gestiona los bordes internos de la tabla */
+        border: 2px solid #022f11;
+        padding: 15px;  /* Para que no se peguen las letras a los bordes */
+        text-align: center;
+
+}
+.tituloprincipal {
+    background-color: #012d13;
+    color: white;
+    font-size: 24px;
+    padding: 15px 0;
+    text-transform: uppercase;
+    font-weight: 800; /* Pone el texto en negrita */
+    letter-spacing: 12px; /* Crea la separación entre las letras */
+}
+thead th {
+    background-color: green;
+    color: white;
+    text-transform: uppercase; /* Fija el texto en MAYÚSCULAS */
+    font-weight: bold;
+}
+.hora {
+    background-color: rgb(182, 229, 167);
+    font-weight: bold;
+
+}
+.recreo {
+    background-color: green;
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+tbody td:not(.hora):not(.recreo) {
+    color: rgb(34, 12, 12);
+    font-weight: bold;
+}
+/* Designamos una clase para cada asignatura */
+.ingles {
+    background-color:rgb(149, 160, 222);
+}
+.ip {
+    background-color:aqua;
+}
+.sor {
+    background-color:rgb(183, 43, 226);
+}
+.sistemas {
+    background-color:rgb(133, 208, 206);
+}
+.iac {
+    background-color: burlywood;
+}
+.seguridad {
+    background-color: bisque;
+}
+.app {
+    background-color:rgb(171, 148, 115);
+}
+.pi {
+    background-color: rgb(253, 255, 138);
+}
+/* Toda esta regla resalta los colores de las asignaturas cuando se pasa por encima el ratón */
+tbody td:not(.hora):not(.recreo):hover { /* Lor argumentos not(.x) quedan excluidos de la regla */
+    background-color: red; 
+    color: white;
+}

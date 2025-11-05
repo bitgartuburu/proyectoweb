@@ -1,0 +1,50 @@
+.cabecera-foto {
+    text-align: center;
+    margin: 0 auto;
+}
+body {
+    background-color: rgb(212, 232, 237);
+}
+h1 {
+    color:crimson;
+    text-align: center; 
+}
+h2 {
+    color:blue;
+    text-align: right;
+    font-weight: bold;
+    border-bottom: 3px solid #3903f9aa;
+    padding-bottom: 5px;
+
+}
+.caracteristicas {
+    border-style: dotted; /* Establece el tipo de borde */
+    border-radius: 3px;
+    background-color: rgb(255, 228, 194);
+    margin: 10px;
+    width: 30%;
+}
+.caracteristicas ol {
+    color: #3826bde6;
+    font-family: Comic;
+    font-size: 14px;
+
+}
+.precio {
+    color:black;
+    border-style: none;
+    font-weight: bolder;
+    background-color: azure;
+    margin: 20px auto;
+    padding: 3px;
+    text-align: center;
+    font-size: 24px;
+
+}
+.euros {
+    color:red;
+
+}
+.galeria {
+    text-align: center;
+}

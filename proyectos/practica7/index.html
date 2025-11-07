@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica 7</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <form class="formulario-pizza">
+        <h1> - Pedidos de pizza - </h1>
+        <div class="seccion-datos-personales">
+                <div class="campo-fila">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre">
+                </div>
+                <div class="campo-fila">
+                    <label for="direccion">Dirección</label>
+                    <input type="text" id="direccion" name="direccion">
+                </div>
+            </div>
+            <div class="seleccion-opciones">
+                <div class="opcion-categoria">
+                    <h3>Ingredientes</h3>       
+                    <label>
+                        <input type="checkbox" name="ingrediente" value="queso"> Queso
+                    </label>
+                    <label>
+                        <input type="checkbox" name="ingrediente" value="pimiento"> Pimiento
+                    </label>
+                    <label>
+                        <input type="checkbox" name="ingrediente" value="cebolla"> Cebolla
+                    </label>
+                </div>
+
+                <div class="opcion-categoria">
+                    <h3>Tamaño</h3>
+                    
+                    <label>
+                        <input type="radio" name="tamaño" value="pequeña"> Pequeña
+                    </label>
+                    <label>
+                        <input type="radio" name="tamaño" value="mediana"> Mediana
+                    </label>
+                    <label>
+                        <input type="radio" name="tamaño" value="grande"> Grande
+                    </label>    
+                </div>
+
+            <div class="opcion-categoria">
+                    <h3>Forma de pago</h3>        
+                    <select name="pago" id="pago">
+                        <option value="visa">Visa</option>
+                        <option value="mastercard">Mastercard</option>
+                        <option value="paypal">PayPal</option>
+                        <option value="efectivo">Efectivo</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="seccion-instrucciones">
+                <h3>Instrucciones especiales</h3>
+                <textarea name="instrucciones" rows="5"></textarea>
+            </div>
+
+            <div class="seccion-botones">
+                <input type="submit" value="¡Enviar!">
+                <input type="reset" value="¡Borrar!">
+            </div>
+    </form>
+</body>
+</html>

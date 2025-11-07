@@ -1,0 +1,115 @@
+
+.formulario-pizza {
+    width: 600px; /* Define un ancho fijo para que no ocupe toda la página */
+    margin: 40px auto; /* Centra el formulario en la página (margen superior/inferior de 40px, auto para los lados) */
+    padding: 20px; /* Espacio interno dentro del formulario */
+    border: 1px solid #999; /* Borde general */
+    /* Color melocotón/naranja claro del fondo del formulario */
+    background-color: #ffde83; 
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
+}
+
+h1 {
+    background-color: orange;
+    margin: 0 100px;
+    padding: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+/* 1. Contenedor de las dos filas */
+.seccion-datos-personales {
+    display: grid; 
+    /*
+     * Definimos las columnas:
+     * La primera columna (para las etiquetas) será pequeña (auto)
+     * La segunda columna (para los inputs) tomará el espacio restante (1fr)
+    */
+    grid-template-rows: auto 1fr; 
+    gap: 10px 15px; /* Espacio entre filas (vertical) y entre columnas (horizontal) */
+    padding: 15px 20px;
+}
+
+/* 2. Estilo para las etiquetas (aseguramos la alineación a la derecha) */
+.seccion-datos-personales label {
+    text-align: right;
+    font-weight: bold; /* Para que destaquen como en la imagen */
+    padding: 5px 20px 5px 20px;
+    /* En Grid, cada 'label' y 'input' automáticamente se coloca en una celda */
+    background-color: #8B4513;
+    color: white;
+}
+
+/* 3. Estilo para los campos de texto */
+.seccion-datos-personales input[type="text"] {
+    width: 25%; /* El ancho que coje */
+    padding: 5px;
+}
+.seleccion-opciones {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px; 
+    margin-bottom: 20px;
+}
+/* 1. Estilo para el Contenedor de cada Categoría (el marco exterior) */
+.opcion-categoria {
+    /* flex: 1; sigue siendo esencial para que los tres se repartan el ancho */
+    flex: 1; 
+    margin: 0 5px; /* Separación entre las columnas */
+}
+
+/* 2. Estilo para la Cabecera dentro de la Categoría (el color marrón) */
+h3 {
+    /* Color marrón oscuro del formulario original (ejemplo: #8b4513) */
+    background-color: #8B4513; 
+    color: white;
+    text-align: center;
+    padding: 8px 0; /* Espaciado interno superior e inferior */
+    margin: 0; /* MUY IMPORTANTE: Elimina el margen por defecto del h3 para que se pegue al borde */
+    font-size: 1.1em;
+}
+
+/* 3. Estilo para el contenido de los inputs (el cuerpo de la caja) */
+.opcion-categoria label, 
+.opcion-categoria select {
+    display: block; /* Para que cada opción ocupe su propia línea */
+    padding: 5px 10px; /* Espaciado interno para separar las opciones */
+}
+
+/* 4. Estilo de los inputs dentro de los labels (para alineación, si es necesario) */
+.opcion-categoria input[type="radio"], 
+.opcion-categoria input[type="checkbox"] {
+    margin-right: 5px; /* Un poco de separación entre la casilla y el texto */
+}
+
+.opcion-categoria select {
+    margin: 20px auto;
+}
+
+.seccion-instrucciones textarea {
+    margin: 20px auto;
+    resize: none;
+    width: 100%;
+}
+
+.seccion-botones {
+    /* Centra los botones horizontalmente dentro del contenedor */
+    text-align: center; 
+    /* Margen superior para separarlos de la textarea */
+    margin-top: 30px; 
+    /* Padding inferior para separarlos del borde del formulario */
+    padding-bottom: 10px; 
+}
+
+.seccion-botones input[type="submit"],
+.seccion-botones input[type="reset"] {
+    padding: 8px 18px; /* Espaciado interno para hacerlos grandes */
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 0 25px; /* Espacio significativo entre el botón Enviar y Borrar */
+    cursor: pointer; /* Indica que son interactivos */
+    color: #333; /* Texto oscuro */
+    border: 1px solid #999; /* Borde sutil como el de la imagen */
+    border-radius: 4px; /* Bordes ligeramente redondeados */
+    background-color: #e0e0e0; /* Fondo gris claro por defecto */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}

@@ -12,7 +12,16 @@
         <div class="cabecera">
             APLICACIONES WEB
         </div>
-        <div class="indice">
+        <form class="busqueda">
+            <input type="text" placeholder="Busca proyectos" class="search-input">
+            <button type="submit" class="search-button">
+                Enviar
+            </button>           
+        </form>
+        <div class="barramenus">
+            Placeholder
+        </div>
+        <div class="indice" id="indice">
             <p>Índice</p>
             <ul>
                 <li><a href="proyectos/practica1/practica1.html" target="_blank">Practica 1</a></li>
@@ -31,6 +40,7 @@
         </div>
         <div class="footer">Pie de página</div>
     </div>
-    
+    <script src="scripts/busqueda.js"></script> 
+    <!-- Los scripts se suelen poner al final para que se carguén una vez la página haya terminado de cargar correctamente -->
 </body>
 </html>

@@ -3,8 +3,7 @@
     width: 600px; /* Define un ancho fijo para que no ocupe toda la página */
     margin: 40px auto; /* Centra el formulario en la página (margen superior/inferior de 40px, auto para los lados) */
     padding: 20px; /* Espacio interno dentro del formulario */
-    border: 1px solid #999; /* Borde general */
-    /* Color melocotón/naranja claro del fondo del formulario */
+    border: 1px solid #999; 
     background-color: #ffde83; 
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
 }
@@ -17,33 +16,38 @@ h1 {
     font-weight: bold;
 }
 /* 1. Contenedor de las dos filas */
-.seccion-datos-personales {
+.campo-fila {
     display: grid; 
-    /*
-     * Definimos las columnas:
-     * La primera columna (para las etiquetas) será pequeña (auto)
-     * La segunda columna (para los inputs) tomará el espacio restante (1fr)
-    */
+    justify-content: space-between;
+    /* La primera columna (para las etiquetas) La segunda columna (para los inputs) */
     grid-template-rows: auto 1fr; 
+    grid-template-columns: 100px 1fr;
     gap: 10px 15px; /* Espacio entre filas (vertical) y entre columnas (horizontal) */
     padding: 15px 20px;
+    align-items: center;
 }
 
 /* 2. Estilo para las etiquetas (aseguramos la alineación a la derecha) */
 .seccion-datos-personales label {
-    text-align: right;
+    text-align: left;
     font-weight: bold; /* Para que destaquen como en la imagen */
     padding: 5px 20px 5px 20px;
     /* En Grid, cada 'label' y 'input' automáticamente se coloca en una celda */
     background-color: #8B4513;
     color: white;
+    grid-column: 1;
+    grid-row: 1 / 2;
 }
 
 /* 3. Estilo para los campos de texto */
 .seccion-datos-personales input[type="text"] {
-    width: 25%; /* El ancho que coje */
+    width: 75%; /* El ancho que coje */
     padding: 5px;
+    /* margin-left: 15px; */
+    grid-column: 2;
+    grid-row: 1 / 2;
 }
+
 .seleccion-opciones {
     display: flex;
     justify-content: space-between;
@@ -107,9 +111,9 @@ h3 {
     font-weight: bold;
     margin: 0 25px; /* Espacio significativo entre el botón Enviar y Borrar */
     cursor: pointer; /* Indica que son interactivos */
-    color: #333; /* Texto oscuro */
-    border: 1px solid #999; /* Borde sutil como el de la imagen */
-    border-radius: 4px; /* Bordes ligeramente redondeados */
-    background-color: #e0e0e0; /* Fondo gris claro por defecto */
+    color: #333; 
+    border: 1px solid #999; 
+    border-radius: 4px; 
+    background-color: #e0e0e0; 
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }

@@ -67,9 +67,9 @@ a:hover {
     grid-row: 2;
 }
 
-/* Añade esto a tu archivo CSS */
+
 mark {
-    background-color: #ffc107; /* Un amarillo brillante estándar para resaltado */
-    color: black; /* Asegura que el texto resaltado se vea bien */
+    background-color: #ffc107; 
+    color: black; 
     padding: 0 2px;
 }

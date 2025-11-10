@@ -59,3 +59,43 @@ function performSearch(term) {
     // 5. Reemplazamos el contenido original de la página con el nuevo HTML resaltado
     contentContainer.innerHTML = newHtmlContent;
 }
+
+const buttons = document.querySelectorAll('.barramenus button');
+const cuerpo = document.getElementById('cuerpo');
+
+buttons.forEach(btn => {
+  btn.addEventListener('click', async () => { // Se añade la etiqueta asyc para que se ejecute de forma asincrona (de este modo espera a que se ejecuten los otros procesos y evita bugs)
+    const tab = btn.dataset.tab;
+
+    if (tab === "descripcion") {
+      cuerpo.innerHTML = "<h3>Descripción</h3><p>Este proyecto tiene como objetivo...</p>";
+    } 
+    else if (tab === "pagina") {
+      cuerpo.innerHTML = '<iframe src="proyectos/practica1/practica1.html" width="100%" height="400"></iframe>';
+    } 
+   else if (tab === "codigo") {
+      // Usamos fetch para traer el código fuente
+      try {
+        const htmlResponse = await fetch("proyectos/practica1/practica1.html");
+        const htmlText = await htmlResponse.text();
+
+        const cssResponse = await fetch("proyectos/practica1/css/style.css");
+        const cssText = await cssResponse.text();
+
+        cuerpo.innerHTML = `
+          <h3>Código HTML</h3>
+          <pre><code>${escapeHtml(htmlText)}</code></pre>
+          <h3>Código CSS</h3>
+          <pre><code>${escapeHtml(cssText)}</code></pre>
+        `;
+      } catch (error) {
+        cuerpo.innerHTML = "<p>Error al cargar el código.</p>";
+      }
+    }
+  });
+});
+
+// Función para escapar caracteres especiales y que el código se muestre bien
+function escapeHtml(text) {
+  return text.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}

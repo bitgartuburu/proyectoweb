@@ -5,7 +5,7 @@ body  {
 
 .grid {
     display: grid;
-    grid-template-columns: 200px 1fr 1fr 1fr;
+    grid-template-columns: 200px 1fr 1fr 100px;
     grid-template-rows: auto 100px 1fr 1fr auto;
     min-height: 100vh;
     gap: 5px;
@@ -37,7 +37,7 @@ body  {
 
 }
 .cuerpo-texto {
-    grid-column: 2 / 3;
+    grid-column: 2 / 4;
     grid-row: 3 / 4;
 }
 .icono {
@@ -72,4 +72,29 @@ mark {
     background-color: #ffc107; 
     color: black; 
     padding: 0 2px;
+}
+
+.barramenus {
+  display: flex;
+  gap: 10px;
+  background-color: #333;
+  padding: 10px;
+}
+
+.barramenus button {
+  background: #555;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.barramenus button:hover {
+  background: #777;
+}
+
+.tab-content {
+  margin-top: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
 }

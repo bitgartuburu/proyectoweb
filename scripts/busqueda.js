@@ -79,7 +79,7 @@ buttons.forEach(btn => {
         const htmlResponse = await fetch("proyectos/practica1/practica1.html");
         const htmlText = await htmlResponse.text();
 
-        const cssResponse = await fetch("proyectos/practica1/css/style.css");
+        const cssResponse = await fetch("proyectos/practica1/css/estilo.css");
         const cssText = await cssResponse.text();
 
         cuerpo.innerHTML = `

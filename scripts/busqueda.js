@@ -74,7 +74,7 @@ async function cargarProyecto(tab, nombreProyecto) {
     else if (tab === "pagina") {
       cuerpo.innerHTML = `
         <iframe src="proyectos/${nombreProyecto}/${manifest.html[0]}" 
-                width="100%" height="400" style="border:none;"></iframe>
+                width="100%" height="50%" style="border:none;"></iframe>
       `;
     } 
     else if (tab === "codigo") {

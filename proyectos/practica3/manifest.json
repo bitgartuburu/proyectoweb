@@ -1,0 +1,5 @@
+{
+    "html": ["principal.html", "secundaria.hmtl"],
+    "css": ["principal.css", "secundaria.css"],
+    "descripcion": "descripcion.txt"
+}

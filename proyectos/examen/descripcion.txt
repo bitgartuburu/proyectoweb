@@ -1,1 +1,2 @@
-Texto de prueba
+Examen que se le planteo al alumno en la asignatura de Aplicaciones Web en 2º año de SMR. 
+El objetivo era reproducir una página web con temática de Halloween.

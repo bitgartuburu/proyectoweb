@@ -1,1 +1,1 @@
-Texto de prueba
+El objetivo con este formulario es precisamente que el alumno se familiarice con el uso y la configuración, tanto de estilo como de opciones, de los formularios en HTML, completando también la maquetación mediante grid o flexbox.

@@ -1,1 +1,2 @@
-Texto de prueba
+El objetivo de esta práctica es acostumbrarse al uso del estilo para la organización de los contenidos de la página web, además de aprender a usar listas tanto organizadas como desorganizadas.
+El uso de padding, margin y border serán fundamentales. 

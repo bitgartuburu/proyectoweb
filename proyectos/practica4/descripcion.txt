@@ -1,1 +1,1 @@
-Texto de prueba
+Es proyecto busca la configuración de una página básica completa, mezclando todos los elementos anteriores de forma dinámica.

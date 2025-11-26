@@ -1,1 +1,1 @@
-Texto de prueba
+Con esta práctica se busca que el alumno se familiarice con conceptos como grid o flexbox, de manera que sea capa de maquetar una página web de forma correcta.

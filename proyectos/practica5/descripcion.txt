@@ -1,1 +1,2 @@
-Texto de prueba
+Práctica que busca el aprendizaje del uso de tablas en html y su configuración con estilos en CSS.
+Se reproduce el horario de clases del curso, asegurando un uso adecuado de colspam y rowspam.

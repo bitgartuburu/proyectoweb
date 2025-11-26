@@ -1,1 +1,1 @@
-Texto de prueba
+El objetivo de esta práctica es aprender a usar los enlaces así como algunas de sus características como por ejemplo hover

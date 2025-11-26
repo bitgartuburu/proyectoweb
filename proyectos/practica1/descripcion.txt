@@ -1,1 +1,1 @@
-Texto de prueba
+Breve práctica en la que se muestra un uso básico de las etiquetas, su relación con la página de estilos y algunas opciones de personalización, como por ejemplo, establecer una imagen como fondo.

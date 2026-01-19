@@ -1,0 +1,1 @@
+En esta práctica se explora la integración de JavaScript para validar una serie de campos.

@@ -1,0 +1,30 @@
+body {
+    background-color: rgb(228, 211, 117);
+    font-weight: bold;
+    display: flex;
+    flex-direction: column; /* Pone los elementos uno debajo de otro */
+    align-items: center;    /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+    min-height: 100vh;      /* Obliga al body a medir toda la pantalla */
+    margin: 0;              /* Quita margenes por defecto */
+    gap: 10px;
+}
+
+input, select {
+    margin-bottom: 10px;
+    display: inline-block; /* Asegura que el margen se aplique correctamente */
+}
+
+h2 {
+    margin: 5px;
+    padding: 20px;
+    border: 2px solid;
+    border-color: brown;
+    border-radius: 8px;
+    background-color: chocolate;
+    color: aliceblue;
+}
+
+button {
+    margin-left: 40px;
+}

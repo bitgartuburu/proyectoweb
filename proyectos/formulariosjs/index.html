@@ -3,30 +3,71 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Validar</title>
+  <link rel="stylesheet" href="css/style.css">
+  <title>Validar formularios</title>
 </head>
 <body>
-  
-  <form id="formulario" action="pagina.php" method="post">
+  <h2>DATOS DEL USUARIO</h2>
+  <form id="formulario" action="pagina.html" method="post">
     <label for="nombre">Nombre:</label>
     <input type="text" id="nombre" name="nombre">
+    <br>
+    <label for="apellido">Apellido:</label>
+    <input type="text" id="apellido" name="apellido">
+    <br>
+    <label for="edad">Edad:</label>
+    <input type="text" id="edad" name="edad" size="3" maxlength="2">
     <br>
     <label for="email">Email:</label>
     <input type="text" id="email" name="email">
     <br>
-    <label for="categoria">Categoría:</label>
-    <select id="categoria" name="categoria">
+    <label for="telefono">Teléfono:</label>
+    <input type="text" id="telefono" name="telefono">
+    <br>
+    <label for="provincias">Provincias</label>
+    <select id="provincias" name="provincias">
         <option value="">Seleccione una opción</option>
-        <option value="1">Opción 1</option>
-        <option value="2">Opción 2</option>
-        <option value="3">Opción 3</option>
+        <option value="1">Andalucía</option>
+        <option value="2">Castilla Leon</option>
+        <option value="3">Castilla la Mancha</option>
+        <option value="4">Cataluñaa</option>
+        <option value="5">Cantabria</option>
+        <option value="6">Asturias</option>
+        <option value="7">Madrid</option>
+        <option value="8">Valencia</option>
+        <option value="9">Extremadura</option>
+        <option value="10">País Vasco</option>
+        <option value="11">Navarra</option>
+        <option value="12">La Rioja</option>
+        <option value="13">Galicia</option>
     </select>
     <br>
+    <label for="domicilio">Dirección:</label>
+    <select id="via" name="via">
+      <option value="">-Tipo de vía-</option>
+      <option value="1">c/</option>
+      <option value="2">avd.</option>
+      <option value="3">plza.</option>
+      <option value="4">ctra.</option>
+      <option value="5">p.º</option>
+      <option value="6">trv.</option>
+      <option value="7">gta.</option>
+      <option value="8">bo.</option>
+      <option value="9">rbla.</option>
+      <option value="10">cta.</option>
+      <option value="11">blvr.</option>
+      <option value="12">ver.a</option>
+      <option value="13">p.zo</option>
+    </select>
+    <input type="text" id="direccion" name="direccion">
+    <br>
+    
     <input type="checkbox" id="terminos" name="terminos">
     <label for="terminos" class="labelCheck">Acepto los términos y condiciones</label>
     <br>
     <button type="submit">Enviar</button>
-    <p id="mensajeError"></p>
+    <button type="button" id="limpiar">Limpiar</button>
+    <p id="mensajeError"></p>  
 </form>
 
   <script src="./src/index.js"></script>

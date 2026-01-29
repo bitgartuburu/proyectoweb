@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tabla de multiplicar</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="wrapper">
+     <div class="controls"></div>
+     <h1>Generador de tabla de multiplicar</h1>
+        <label for="numero">Introduce un número:</label>
+        <input type="number" id="numero" />
+        <button id="btnGenerar">Generar tabla</button>
+        <!-- Aquí se insertará la tabla -->
+        <div class="tabla-container">
+            <div id="contenedorTabla"></div>
+     </div>
+ </div>
+
+  <script>
+    // 1. Referencias a los elementos del DOM
+    const inputNumero = document.getElementById('numero');  // Busca en el html el elemento con id 'numero'
+    const btnGenerar = document.getElementById('btnGenerar'); // referencia al boton generar
+    const contenedorTabla = document.getElementById('contenedorTabla'); // señala al contenedor div donde crearemos la tabla
+
+    // 2. Escuchamos el click en el botón
+    btnGenerar.addEventListener('click', function () {
+      // 2.1. Obtenemos el valor del input y lo convertimos a número
+      const n = Number(inputNumero.value);
+
+      // 2.2. Validamos que sea un número válido
+      if (isNaN(n) || inputNumero.value.trim() === '') {  // Esta es la función que comprueba que el input es un número
+        contenedorTabla.innerHTML = '<p>Por favor, introduce un número válido.</p>';
+        return;
+      }
+
+      // 2.3. Generamos la tabla de multiplicar como HTML
+      //     Por ejemplo, de 1 a 10
+      let html = '<table>';
+      html += '<tr><th>Factor</th><th>Resultado</th></tr>';
+
+      for (let i = 1; i <= 10; i++) { // Aquí se define el bucle, si el i= 1 y es menor de 10 lo aumenta, cada vuelta del bucle hace eso
+        html += '<tr>';
+        html += `<td>${n} × ${i}</td>`;  // El objetivo de estas siguientes filas es la creación de la tabla
+        html += `<td>${n * i}</td>`;
+        html += '</tr>';
+      }
+
+      html += '</table>';
+
+      // 2.4. Insertamos la tabla en el contenedor
+      contenedorTabla.innerHTML = html;
+    });
+  </script>
+</body>
+</html>

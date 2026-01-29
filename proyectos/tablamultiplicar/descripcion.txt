@@ -1,0 +1,1 @@
+Programa en Javascript que carga un número y muestra su tabla de multiplicar formateada como una tabla.

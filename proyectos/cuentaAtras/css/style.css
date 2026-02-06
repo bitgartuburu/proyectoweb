@@ -1,0 +1,16 @@
+body {
+    background-color: rgb(241, 216, 145);
+}
+
+div {
+    font-size: 32px;
+    font-weight: bolder;
+    margin: 10px;
+    color: rgb(238, 10, 105);
+}
+
+button {
+    color: rgb(173, 243, 177);
+    background-color: rgb(235, 14, 14);
+    margin: 5px;
+}

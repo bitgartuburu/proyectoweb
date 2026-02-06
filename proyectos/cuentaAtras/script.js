@@ -75,3 +75,4 @@ function aplicarTiempo() {
         actualizarPantalla();
     }
 }
+// Cambio

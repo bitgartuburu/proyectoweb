@@ -1,4 +1,4 @@
-En este ejercicio de nos proporciona el siguiente código con una cuenta atras múy básica  y 
+En este ejercicio de nos proporciona un código con una cuenta atras múy básica  y 
 se nos pide modificarlo en orden que la cuenta atrás se comporte de las siguiente forma:
 
 Modificar el código javascript del ejemplo para que la cuenta atrás sea desde 99 hasta 00.

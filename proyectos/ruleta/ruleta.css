@@ -1,18 +1,25 @@
+body {
+    background-image: url("fondocasino.jpg");
+    background-size: cover;      /* La imagen cubre toda la pantalla */
+    background-repeat: no-repeat; /* Evita que se repita */
+    background-position: center;  /* Centrada */
+} /* Se ha añadido para ajustar la imagen del fondo */
 
 .contenedor {
     margin: auto;
-    width: 400px;
+    width: 600px;
 }
 
 .imagenes {
     padding: 10px;
-    border: 1px solid black;
+    border: 5px solid gold;
     /* Bordes redondeados. */
     border-radius: 30px;
-    width: 370px;
+    width: 560px;
     text-align: center;
     /* Sombra. */
     /*box-shadow: 2px 2px 5px #66CCFF inset;*/
+    background-color: rgba(90, 47, 11, 0.74);
 }
 
 img {
@@ -22,8 +29,23 @@ img {
     box-shadow: 2px 2px 5px #66CCFF;
 }
 
+h1 { 
+    text-align: center;
+    font-size: 40px; 
+    font-weight: bold; 
+    background: linear-gradient(90deg, #ff0000, #ffff00, #00ff00); 
+    -webkit-background-clip: text; 
+    color: transparent; 
+}
+
+.imagenes img { 
+    width: 100px; /* o el tamaño que quieras */ 
+    height: 100px; /* mantener cuadrado ayuda mucho */ 
+    object-fit: cover; /* recorta para que no se deformen */ 
+}
+
 .botones {
-    width: 370px;
+    width: 560px;
     text-align: center;
 }
 
@@ -39,9 +61,64 @@ img {
     margin-left: 10px;
     width: 150px;
     box-shadow: 2px 2px 5px #999;
+    background-color: black;
+    color: gold;
 }
 
 .boton:hover {
-    /* Al pasar por encima del bot�n cambia el color de la sombra. */
+    /* Al pasar por encima del bot�n cambia el color de la sombra. */
     box-shadow: 2px 2px 5px #333;    
+}
+
+.titulo-casino {
+    font-family: 'Luckiest Guy';
+    font-size: 50px;
+    font-weight: bolder;
+    text-align: center;
+    padding: 20px 40px;
+    position: relative;
+    display: inline-block;
+    margin: 20px auto;
+    color: goldenrod;
+    background: rgba(0,0,0,0.6); /* Fondo suave para que destaque */
+    border-radius: 20px;
+}
+
+/* Marco animado alrededor del título */
+.titulo-casino::before {
+    content: "";
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+    border-radius: 25px;
+    padding: 6px;
+
+    background: linear-gradient(
+        90deg,
+        #ffeb3b,
+        #f44336,
+        #4caf50,
+        #2196f3,
+        #ffeb3b
+    );
+    background-size: 300%;
+    animation: bordeColorido 4s linear infinite;
+
+    z-index: -1;
+}
+
+/* Animación suave del borde */
+@keyframes bordeColorido {
+    0%   { background-position: 0%; }
+    100% { background-position: 300%; }
+}
+
+.resultado {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    color: white;
 }

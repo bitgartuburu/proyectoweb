@@ -5,17 +5,18 @@
         <title>La ruleta del aprobado</title>
         <!-- Carga la fuente desde google.
              Para usar otra fuente http://www.google.com/fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">     
         <link href='http://fonts.googleapis.com/css?family=The+Girl+Next+Door' rel='stylesheet' type='text/css'>
         <link href='ruleta.css' rel='stylesheet' type='text/css'>
         <script>
             // Almacenamos los nombres de las imágenes en una variable compleja.
             // Se denomina tabla y se accede a los valores mediante el indice (empezando por 0).
             // Por ejemplo: imagenes[0] contiene "rajoy.png"
-            var imagenes = ["corona.jpg", "vacuna.jpg", "manzana.png"];
+            var imagenes = ["corona.jpg", "vacuna.jpg", "manzana.png", "estrella.jpg"];
             // Almacenamos el indice de la imagen que esta en cada recuadro.
-            var cuadro = [ 0, 0, 0];
-            // Almacenamos el setInterval de cada recuadro de forma independiente.
-            var intervaloRuleta = [ null, null, null ];
+            var cuadro = [ 0, 0, 0, 0];
+            // Almacenamos el setInterval de cada recuadro de forma independiente. 
+            var intervaloRuleta = [ null, null, null, null ];
             // Variable donde almacenamos el numero de recuadros que están cambiando.
             var corriendo = 0;
             // Intervalo del cambio de sombras.
@@ -35,23 +36,46 @@
                         // Si lo multiplico por tres el dominio pasa a ser [0-3)
                         // Esta operación genera decimales, para eliminarlos se usa Math.floor()
                     for(i in cuadro)
-                        cuadro[i] = Math.floor(Math.random() * 3);
+                        cuadro[i] = Math.floor(Math.random() * 4); // Adaptado para tener en cuenta el nuevo cuadro
                     
                     // Genera los intervalos para que cada recuadro cambie de imagen cada centésima de segundo.
-                    intervaloRuleta[0] = setInterval(function() { cambiaImagen(0);}, 100);
-                    intervaloRuleta[1] = setInterval(function() { cambiaImagen(1);}, 50);
-                    intervaloRuleta[2] = setInterval(function() { cambiaImagen(2);}, 10);
+                    intervaloRuleta[0] = setInterval(function() { cambiaImagen(0);}, 150); // Este esta añadido para contemplar la nueva imagen
+                    intervaloRuleta[1] = setInterval(function() { cambiaImagen(1);}, 100);
+                    intervaloRuleta[2] = setInterval(function() { cambiaImagen(2);}, 50);
+                    intervaloRuleta[3] = setInterval(function() { cambiaImagen(3);}, 10);
                     
-                    // Al empezar están cambiando los tres recuadros.
-                    corriendo = 3;
+                    // Al empezar están cambiando los tres recuadros. Aquí he añadido uno más, para que tenga en cuenta el nuevo recuadro
+                     corriendo = 4;
                 }
             }
+
+            function paraDos() { //Función para para dos recuadros, se ha adaptado la función para para cuadros original.
+                // Solo actúa si quedan recuadros corriendo
+                if (corriendo > 0) {
+
+                    // Paramos el primero
+                    corriendo = corriendo - 1;
+                    clearInterval(intervaloRuleta[corriendo]);
+
+                    // Si aún queda otro, paramos el segundo
+                    if (corriendo > 0) {
+                        corriendo = corriendo - 1;
+                        clearInterval(intervaloRuleta[corriendo]);
+                    }
+
+                    // Si ya no queda ninguno, activamos las sombras
+                    if (corriendo == 0)
+                        cambiaSombras();
+                        mostrarResultado();
+                }
+            }
+
             
             // Función que cambia la imagen.
             function cambiaImagen(x) {
                 // Si la imagen es la última paso a la primera.
                 //  Si no cambia al asiguiente imagen.
-                if(cuadro[x]>=2) cuadro[x]=0;
+                if(cuadro[x]>=3) cuadro[x]=0;
                     else cuadro[x] = cuadro[x]+1;
                 
                 // Cambia la propiedad src de la imagen correspondiente en el html.
@@ -71,6 +95,7 @@
                     // Si hemos parado el último activamos el efecto de las sombras.
                     if (corriendo==0) 
                         cambiaSombras();
+                        mostrarResultado();
                 }
             }
             
@@ -94,20 +119,55 @@
                  document.getElementById("imag0").style['boxShadow']=estilo;
                  document.getElementById("imag1").style['boxShadow']=estilo;
                  document.getElementById("imag2").style['boxShadow']=estilo;
+                 document.getElementById("imag3").style['boxShadow']=estilo; // He añadido la nueva imagen en la funcion
             }
+
+                    function mostrarResultado() {
+            // Contamos cuántas veces aparece cada imagen
+            let contador = {};
+
+            for (let i = 0; i < cuadro.length; i++) {
+                let valor = cuadro[i];
+                if (!contador[valor]) contador[valor] = 0;
+                contador[valor]++;
+            }
+
+            // Buscamos el máximo de coincidencias
+            let maxCoincidencias = Math.max(...Object.values(contador));
+
+            let mensaje = "";
+
+            if (maxCoincidencias === 4) {
+                mensaje = "¡INCREÍBLE! ¡4 iguales! Premio máximo 🎉";
+            } else if (maxCoincidencias === 3) {
+                mensaje = "¡Muy bien! 3 iguales. Premio grande 😄";
+            } else if (maxCoincidencias === 2) {
+                mensaje = "¡Has conseguido 2 iguales! Premio pequeño 😉";
+            } else {
+                mensaje = "No hay coincidencias… ¡Sigue intentándolo!";
+            }
+
+            document.getElementById("resultado").textContent = mensaje;
+        }
+
         </script>
     </head>
     <body onload="cambiaSombras();">
+        
         <div class="contenedor">
+            <h1 class="titulo-casino">LA RULETA DEL APROBADO</h1>
             <div class="imagenes">
+                <img id="imag3" src="estrella.jpg"> <!-- Se ha añadido este imagen-->
                 <img id="imag2" src="corona.jpg">
                 <img id="imag1" src="vacuna.jpg">
-                <img id="imag0" src="manzana.png">
+                <img id="imag0" src="manzana.png"> 
             </div>
             <div class="botones">
                 <div class="boton" id="iniciar" onclick="ruleta();">Iniciar</div>
                 <div class="boton" id="parar" onclick="paraRuleta();">Parar</div>
+                <div class="boton" onclick="paraDos();">Parar 2</div> <!-- Se ha añadido este boton--> 
             </div>
+            <p id="resultado" class="resultado"></p>
         </div>
     </body>
 </html>
